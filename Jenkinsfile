@@ -23,8 +23,8 @@ pipeline {
         stage("Deploy on Test"){
             steps{
                 // deploy on container -> plugin
-                deploy adapters: [tomcat9(credentialsId: 'tomcat9servverdetails', path: '', url: 'http://192.168.44.128:8081')], contextPath: '/app', war: '**/*.war'
-              
+               // deploy adapters: [tomcat9(credentialsId: 'tomcat9servverdetails', path: '', url: 'http://192.168.44.128:8081')], contextPath: '/app', war: '**/*.war'
+              echo "========Deploy on Test========"
             }
             
         }
@@ -36,8 +36,8 @@ pipeline {
             
             steps{
                 // deploy on container -> plugin
-                deploy adapters: [tomcat9(credentialsId: 'ssh-worker-node-2', path: '', url: 'http://192.168.44.139:8081')], contextPath: '/app', war: '**/*.war'
-
+                // deploy adapters: [tomcat9(credentialsId: 'ssh-worker-node-2', path: '', url: 'http://192.168.44.139:8081')], contextPath: '/app', war: '**/*.war'
+                echo "========Deploy on Prod========"
             }
         }
     }
